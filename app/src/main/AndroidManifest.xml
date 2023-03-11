@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <!--    internet permission -->
+
     <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
@@ -24,7 +25,7 @@
             android:name=".Receiver"
             android:exported="false" />
         <activity
-            android:name=".Donor"
+            android:name=".Donate"
             android:exported="false" />
         <activity
             android:name=".Signup"
