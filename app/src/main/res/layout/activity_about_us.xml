@@ -4,6 +4,41 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AboutUs">
+    tools:context=".AboutUs"
+    android:background="@drawable/summer">
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
 
+        android:layout_margin="68dp"
+        android:gravity="center"
+        android:text="ABOUT US"
+        android:textColor="#FFFFFF"
+        android:textSize="28sp"
+        tools:layout_editor_absoluteX="81dp"
+        tools:layout_editor_absoluteY="103dp"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="Welcome to NeedFiller, the platform where you can make a difference by donating your gently used items. Our mission is to connect those who have things they no longer need with those who need them the most.
+
+We believe that every little bit counts, and that a single act of kindness can make a world of difference. By donating your food, clothes, blankets, and toys, you can help those who are less fortunate and make a positive impact on their lives.
+
+Join us in our mission to make the world a better place, one donation at a time. Together, we can make a difference in the lives of those who need it the most."
+        android:textColor="@color/white"
+        android:layout_marginTop="80dp"
+        android:padding="60dp"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/textView11"
+
+
+        />
+</RelativeLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
