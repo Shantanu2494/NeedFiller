@@ -71,6 +71,19 @@
                     android:layout_marginVertical="15sp"/>
             </TableRow>
 
+            <TableRow>
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:width="230sp"
+                    android:height="60sp"
+                    android:id="@+id/logout"
+                    android:text="@string/logout"
+                    android:background="@color/button"
+                    android:layout_marginVertical="15sp"/>
+            </TableRow>
+
         </TableLayout>
 
     </RelativeLayout>

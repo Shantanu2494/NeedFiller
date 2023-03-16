@@ -5,4 +5,7 @@
     <string name="receiver">Receiver</string>
     <string name="donation">Donation</string>
     <string name="donate">Donate</string>
+    <string name="logout">Logout</string>
+    <string name="register">Register</string>
+    <string name="already_account_login_here">Already Account? Login Here</string>
 </resources>
