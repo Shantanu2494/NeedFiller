@@ -90,12 +90,8 @@ public class Donate extends AppCompatActivity implements View.OnClickListener {
 //
 //                    });
 
-            Data data = new Data(nameValue, typeValue, descValue, phoneValue, locationValue);
-            db
-                    .collection("Donations")
-                    .document(Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getUid())
-                    .collection("DonationsList")
-                    .add(data);
+            Data data = new Data(nameValue, typeValue, descValue, phoneValue, locationValue, Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getUid());
+            db.collection("Donations").add(data);
             Toast.makeText(this, "data added to db", Toast.LENGTH_SHORT).show();
 
 //            text.setText("Name : "+name.getText().toString()+"\n Type :"+type.getText().toString()+"\n desc :"+desc.getText().toString()+"\n phone :"+phone.getText().toString()+"\n location :"+location.getText().toString());
