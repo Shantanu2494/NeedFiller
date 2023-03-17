@@ -12,14 +12,6 @@ public class Data {
         // Default constructor required for calls to DataSnapshot.getValue(Data.class)
     }
 
-    public String getUid() {
-        return uid;
-    }
-
-    public void setUid(String uid) {
-        this.uid = uid;
-    }
-
     public Data(String name, String type, String desc, String phone, String location, String uid) {
         this.name = name;
         this.type = type;
@@ -67,5 +59,13 @@ public class Data {
 
     public void setLocation(String location) {
         this.location = location;
+    }
+
+    public String getUid() {
+        return uid;
+    }
+
+    public void setUid(String uid) {
+        this.uid = uid;
     }
 }
