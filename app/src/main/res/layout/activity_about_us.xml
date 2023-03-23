@@ -4,6 +4,40 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AboutUs">
+    tools:context=".AboutUs"
+    android:background="@drawable/summer">
+
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textView11"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+
+            android:gravity="center"
+            android:text="ABOUT US"
+            android:textColor="#FFFFFF"
+            android:textSize="28sp"
+            android:layout_marginTop="75dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="35dp"
+            android:text="Welcome to NeedFiller, a donation platform created with the mission to help needy people around the world. We understand that not everyone is fortunate enough to have access to basic necessities such as food, clothing, blankets, and toys. That's why we built this platform, to help bridge the gap between those who have and those who don't.We also understand the importance of transparency and accountability. That's why we strive to keep our donors informed about where their donations are going and how they're making a difference in people's lives.Thank you for joining us on this journey to create a better world for all. Together, we can make a difference, one donation at a time"
+            android:textColor="@color/white"
+            android:textSize="20dp" />
+
+
+
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

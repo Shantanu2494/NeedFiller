@@ -4,6 +4,113 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ContactUs">
+    tools:context=".ContactUs"
+    android:background="@drawable/summer">
 
+    <LinearLayout
+        android:id="@+id/sixthFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:background="@drawable/summer"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+
+            android:gravity="center"
+            android:textColor="#F6F5F5"
+            android:textSize="28sp" />
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+
+            android:gravity="center"
+            android:text="CONTACT US"
+            android:textColor="#FFFFFF"
+            android:textSize="28sp" />
+
+        <EditText
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="75dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="68dp"
+            android:ems="10"
+
+            android:gravity="center"
+            android:hint="Name"
+            android:inputType="textPersonName"
+            android:minHeight="52dp"
+            android:textColor="@color/white"
+            android:textColorHighlight="@color/black"
+            android:textColorHint="#B1B1B1"
+            android:textColorLink="@color/black"
+            android:textSize="20sp"
+
+
+            />
+
+        <EditText
+            android:id="@+id/sub"
+            android:layout_width="wrap_content"
+            android:layout_height="70dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:ems="10"
+
+            android:gravity="center"
+            android:hint="Subject"
+            android:inputType="text"
+            android:minHeight="52dp"
+            android:textColor="@color/white"
+            android:textColorHint="#B1B1B1"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/msg"
+            android:layout_width="wrap_content"
+            android:layout_height="65dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:ems="10"
+
+            android:gravity="center"
+            android:hint="Message"
+            android:inputType="text"
+            android:minHeight="52dp"
+            android:textColor="@color/white"
+            android:textColorHint="#B1B1B1"
+            android:textSize="20sp" />
+
+        <Spinner
+            android:id="@+id/food_sp"
+            android:layout_width="3dp"
+            android:layout_height="14dp"
+            android:layout_marginEnd="130dp"
+            android:scrollbarSize="6dp" />
+
+        <Button
+
+            android:id="@+id/ask"
+            android:layout_width="163dp"
+            android:layout_height="71dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="115dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="115dp"
+
+            app:backgroundTint="#72546CF6"
+
+            android:text="ASK!"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
+
+
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -103,7 +103,7 @@ public class Signup extends AppCompatActivity {
                                 }
                             });
 
-                    startActivity(new Intent(getApplicationContext(), Home.class));
+                    startActivity(new Intent(getApplicationContext(), Login.class));
 
                 } else {
                     Toast.makeText(Signup.this, "Error" + Objects.requireNonNull(task.getException()).getMessage(), Toast.LENGTH_SHORT).show();
