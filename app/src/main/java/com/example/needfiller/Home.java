@@ -6,24 +6,36 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
+import java.util.Objects;
 
 public class Home extends AppCompatActivity implements View.OnClickListener {
 
     Button about_us, contact_us, receiver, donor, logout;
+    FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+    TextView username;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
+        if (user == null) {
+            startActivity(new Intent(getApplicationContext(), Login.class));
+        }
+
         about_us = findViewById(R.id.about_us);
         contact_us = findViewById(R.id.contact_us);
         receiver = findViewById(R.id.receiver);
         donor = findViewById(R.id.donor);
         logout = findViewById(R.id.logout);
+        username = findViewById(R.id.username);
+
 
         about_us.setOnClickListener(this);
         contact_us.setOnClickListener(this);
@@ -52,7 +64,7 @@ public class Home extends AppCompatActivity implements View.OnClickListener {
             startActivity(new Intent(this, Donate.class));
 
         } else if (v.findViewById(R.id.logout) == logout) {
-            
+
             FirebaseAuth.getInstance().signOut();
             Toast.makeText(this, "Logout", Toast.LENGTH_SHORT).show();
             startActivity(new Intent(this, Login.class));

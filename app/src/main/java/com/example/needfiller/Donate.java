@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -18,6 +19,7 @@ import android.widget.Toast;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -31,12 +33,16 @@ public class Donate extends AppCompatActivity implements View.OnClickListener {
     EditText name, type, desc, phone, location;
 
     TextView text;
-
+    FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_donor);
+
+        if (user == null) {
+            startActivity(new Intent(getApplicationContext(), Login.class));
+        }
 
         donate = findViewById(R.id.donate);
 
@@ -91,7 +97,15 @@ public class Donate extends AppCompatActivity implements View.OnClickListener {
 //                    });
 
             Data data = new Data(nameValue, typeValue, descValue, phoneValue, locationValue, Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getUid());
-            db.collection("Donations").add(data);
+            db.collection("Donations").add(data).addOnFailureListener(e -> {
+                Log.w(Signup.TAG, "Error adding Donations", e);
+                AlertDialog.Builder builder = new AlertDialog.Builder(this);
+                builder.setMessage(e + "");
+                builder.setTitle("Error adding Donations");
+                builder.show();
+                Toast.makeText(this, "error", Toast.LENGTH_SHORT).show();
+
+            });
             Toast.makeText(this, "data added to db", Toast.LENGTH_SHORT).show();
 
 //            text.setText("Name : "+name.getText().toString()+"\n Type :"+type.getText().toString()+"\n desc :"+desc.getText().toString()+"\n phone :"+phone.getText().toString()+"\n location :"+location.getText().toString());

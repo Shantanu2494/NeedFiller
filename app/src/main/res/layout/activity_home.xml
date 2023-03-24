@@ -7,9 +7,9 @@
     tools:context=".Home">
 
     <RelativeLayout
+        android:id="@+id/mailRL"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/mailRL"
         android:background="@drawable/summer">
 
         <TableLayout
@@ -22,69 +22,112 @@
             <TableRow>
 
                 <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:width="230sp"
-                    android:height="60sp"
                     android:id="@+id/donor"
-                    android:text="@string/donation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="15sp"
+                    android:width="230sp"
+                    android:height="60sp"
                     android:background="@color/button"
-                    android:layout_marginVertical="15sp"/>
+                    android:text="@string/donation" />
             </TableRow>
 
             <TableRow>
 
                 <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:width="230sp"
-                    android:height="60sp"
                     android:id="@+id/receiver"
-                    android:text="@string/receiver"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="15sp"
+                    android:width="230sp"
+                    android:height="60sp"
                     android:background="@color/button"
-                    android:layout_marginVertical="15sp"/>
+                    android:text="@string/receiver" />
             </TableRow>
 
             <TableRow>
 
                 <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:width="230sp"
-                    android:height="60sp"
-                    android:text="@string/contact_us"
                     android:id="@+id/contact_us"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="15sp"
+                    android:width="230sp"
+                    android:height="60sp"
                     android:background="@color/button"
-                    android:layout_marginVertical="15sp"/>
+                    android:text="@string/contact_us" />
             </TableRow>
 
             <TableRow>
 
                 <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:width="230sp"
-                    android:height="60sp"
                     android:id="@+id/about_us"
-                    android:text="@string/about_us"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="15sp"
+                    android:width="230sp"
+                    android:height="60sp"
                     android:background="@color/button"
-                    android:layout_marginVertical="15sp"/>
+                    android:text="@string/about_us" />
             </TableRow>
 
             <TableRow>
 
                 <Button
+                    android:id="@+id/logout"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginVertical="15sp"
                     android:width="230sp"
                     android:height="60sp"
-                    android:id="@+id/logout"
-                    android:text="@string/logout"
                     android:background="@color/button"
-                    android:layout_marginVertical="15sp"/>
+                    android:text="@string/logout" />
             </TableRow>
 
         </TableLayout>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true">
+
+
+            <RelativeLayout
+                android:id="@+id/userTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="  "
+                    android:textColor="@color/white"
+                    android:textSize="25sp" />
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@+id/userTitle">
+
+                <TextView
+                    android:id="@+id/username"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textColor="@color/white"
+                    android:textSize="25sp" />
+            </RelativeLayout>
+
+        </RelativeLayout>
 
     </RelativeLayout>
 

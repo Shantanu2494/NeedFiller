@@ -17,6 +17,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 import java.util.Objects;
 
@@ -29,11 +30,16 @@ public class Login extends AppCompatActivity {
     ProgressBar progressBar;
 
     FirebaseAuth fAuth;
+    FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+        if (user != null) {
+            startActivity(new Intent(getApplicationContext(), Home.class));
+        }
 
 
         mEmail = findViewById(R.id.email);
@@ -75,7 +81,7 @@ public class Login extends AppCompatActivity {
 
             fAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(task -> {
                 if (task.isSuccessful()) {
-                    Toast.makeText(getApplicationContext(), "Log In Successful ",
+                    Toast.makeText(getApplicationContext(), "Please check your email for the verification link. ",
                             Toast.LENGTH_SHORT).show();
                     startActivity(new Intent(getApplicationContext(), Home.class));
 

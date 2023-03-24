@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ContactUs"
-    android:background="@drawable/summer">
+    android:background="@drawable/summer"
+    tools:context=".ContactUs">
 
     <LinearLayout
         android:id="@+id/sixthFragment"
@@ -29,9 +28,9 @@
             android:id="@+id/textView6"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-
+            android:textAllCaps="true"
             android:gravity="center"
-            android:text="CONTACT US"
+            android:text="@string/contact_us"
             android:textColor="#FFFFFF"
             android:textSize="28sp" />
 
@@ -42,7 +41,6 @@
             android:layout_gravity="center"
             android:layout_marginTop="68dp"
             android:ems="10"
-
             android:gravity="center"
             android:hint="Name"
             android:inputType="textPersonName"
@@ -52,7 +50,7 @@
             android:textColorHint="#B1B1B1"
             android:textColorLink="@color/black"
             android:textSize="20sp"
-
+            tools:ignore="HardcodedText"
 
             />
 
@@ -70,7 +68,8 @@
             android:minHeight="52dp"
             android:textColor="@color/white"
             android:textColorHint="#B1B1B1"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            tools:ignore="HardcodedText" />
 
         <EditText
             android:id="@+id/msg"
@@ -86,14 +85,15 @@
             android:minHeight="52dp"
             android:textColor="@color/white"
             android:textColorHint="#B1B1B1"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            tools:ignore="HardcodedText"/>
 
-        <Spinner
-            android:id="@+id/food_sp"
-            android:layout_width="3dp"
-            android:layout_height="14dp"
-            android:layout_marginEnd="130dp"
-            android:scrollbarSize="6dp" />
+<!--        <Spinner-->
+<!--            android:id="@+id/food_sp"-->
+<!--            android:layout_width="3dp"-->
+<!--            android:layout_height="14dp"-->
+<!--            android:layout_marginEnd="130dp"-->
+<!--            android:scrollbarSize="6dp" />-->
 
         <Button
 
@@ -104,12 +104,11 @@
             android:layout_marginStart="115dp"
             android:layout_marginTop="40dp"
             android:layout_marginEnd="115dp"
-
-            app:backgroundTint="#72546CF6"
-
+            android:background="@color/button"
             android:text="ASK!"
             android:textColor="@color/white"
-            android:textSize="16sp" />
+            android:textSize="16sp"
+            tools:ignore="HardcodedText" />
 
 
     </LinearLayout>
