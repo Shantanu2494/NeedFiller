@@ -8,6 +8,7 @@ public class Data {
     public String location;
     public String uid;
 
+    public String id;
     public Data() {
         // Default constructor required for calls to DataSnapshot.getValue(Data.class)
     }
@@ -19,6 +20,24 @@ public class Data {
         this.phone = phone;
         this.location = location;
         this.uid = uid;
+    }
+
+    public Data(String name, String type, String desc, String phone, String location, String uid, String id) {
+        this.name = name;
+        this.type = type;
+        this.desc = desc;
+        this.phone = phone;
+        this.location = location;
+        this.uid = uid;
+        this.id = id;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getName() {
