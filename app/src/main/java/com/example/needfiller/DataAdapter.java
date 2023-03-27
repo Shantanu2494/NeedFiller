@@ -1,6 +1,7 @@
 package com.example.needfiller;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -39,6 +40,7 @@ public class DataAdapter extends RecyclerView.Adapter<DataAdapter.myViewHolder> 
         holder.phone.setText(dataList.get(position).getPhone());
         holder.location.setText(dataList.get(position).getLocation());
         String id = dataList.get(position).getId();
+        String phone = dataList.get(position).getPhone();
         holder.delete.setOnClickListener(v -> {
             db.collection("Donations")
                     .document(id)
@@ -52,6 +54,12 @@ public class DataAdapter extends RecyclerView.Adapter<DataAdapter.myViewHolder> 
             Intent intent = new Intent(holder.delete.getContext(), Receiver.class);
             holder.delete.getContext().startActivity(intent);
         });
+        holder.call.setOnClickListener(v ->{
+            Intent intent = new Intent(Intent.ACTION_DIAL);
+            intent.setData(Uri.parse("tel:"+phone));
+            holder.delete.getContext().startActivity(intent);
+
+        });
 
     }
 
@@ -62,7 +70,7 @@ public class DataAdapter extends RecyclerView.Adapter<DataAdapter.myViewHolder> 
 
     class myViewHolder extends RecyclerView.ViewHolder {
         TextView name, type, desc, phone, location;
-        Button delete;
+        Button delete,call;
 
         public myViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -72,6 +80,7 @@ public class DataAdapter extends RecyclerView.Adapter<DataAdapter.myViewHolder> 
             phone = itemView.findViewById(R.id.phoneV);
             location = itemView.findViewById(R.id.locationV);
             delete = itemView.findViewById(R.id.delete);
+            call = itemView.findViewById(R.id.call);
         }
     }
 }

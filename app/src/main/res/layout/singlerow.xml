@@ -137,7 +137,15 @@
                 android:id="@+id/delete"
                 android:text="Donation received"
                 android:layout_marginVertical="5sp"
+                android:layout_marginEnd="50sp"
                 />
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="call"
+                android:id="@+id/call"
+                android:layout_marginVertical="5sp"
+                android:layout_toEndOf="@+id/delete"/>
         </RelativeLayout>
 
 
